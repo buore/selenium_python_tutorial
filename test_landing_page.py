@@ -19,3 +19,4 @@ class TestLandingPage(Toolbox):
         assert self.driver.find_element(By.CSS_SELECTOR, ".top_offset > h2").text == 'Search Results:'
 
 
+
