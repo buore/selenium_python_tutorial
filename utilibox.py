@@ -6,15 +6,15 @@ from selenium.webdriver.common.by import By
 
 class Toolbox:
     load_dotenv()
-    secret_username = os.getenv('UNAME')
-    secret_password = os.getenv('PASSWD')
-    invalid_password = os.getenv('INVALID_PASSWD')
+    secret_username = os.environ['UNAME']
+    secret_password = os.environ['PASSWD']
+    invalid_password = os.environ['INVALID_PASSWD']
 
     def url(self):
-        self.driver.get(os.getenv('BASE_URL'))
+        self.driver.get(os.environ['BASE_URL'])
         self.driver.maximize_window()
         page_url = self.driver.current_url
-        assert os.getenv('BASE_URL') in page_url
+        assert os.environ['BASE_URL'] in page_url
 
     def login(self, uname, pword):
         self.driver.find_element(By.CSS_SELECTOR, '#signin_button').click()
