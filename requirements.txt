@@ -1,5 +1,4 @@
-Package            Version
------------------- ---------
+
 pytest             7.1.2
 python-dotenv      0.20.0
 selenium           4.3.0
