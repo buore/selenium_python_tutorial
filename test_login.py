@@ -1,6 +1,4 @@
 from selenium.webdriver.common.by import By
-import time
-import os
 from .utilibox import Toolbox
 
 
