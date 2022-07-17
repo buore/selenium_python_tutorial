@@ -18,7 +18,7 @@ env: # Or as an environment variable
       PASSWD: ${{ secrets.PASSWD }}
       INVALID_PASSWD: ${{ secrets.INVALID_PASSWD }}
 jobs:
-  build:
+  cron:
 
     runs-on: ubuntu-latest
 
