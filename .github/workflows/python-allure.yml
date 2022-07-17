@@ -5,7 +5,7 @@ name: selenium-tests-with-allure-report
 
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '5 * * * *'
 
 permissions:
   contents: read
