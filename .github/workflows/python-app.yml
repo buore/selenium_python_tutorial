@@ -3,9 +3,12 @@
 
 name: selenium_tutorial
   
-on: 
-  schedule:
-   - cron: '*/5 * * * *'
+
+on:
+  push:
+     branches: ["main"]
+  pull_request:
+     branches: ["main"]
 
 permissions:
   contents: read
@@ -16,7 +19,7 @@ env: # Or as an environment variable
       PASSWD: ${{ secrets.PASSWD }}
       INVALID_PASSWD: ${{ secrets.INVALID_PASSWD }}
 jobs:
-  cron:
+  build:
 
     runs-on: ubuntu-latest
 
