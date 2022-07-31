@@ -10,9 +10,6 @@ def setup(request):
     options = Options()
     options.add_argument('--headless')
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
     request.cls.driver = driver
-
     yield
-
     driver.quit()

@@ -1,4 +1,4 @@
 pytest             
 python-dotenv      
 selenium           
-webdriver-manager 
+webdriver-manager

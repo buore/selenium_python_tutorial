@@ -1,7 +1,6 @@
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 import time
-import os
 from .utilibox import Toolbox
 
 
@@ -17,6 +16,11 @@ class TestLandingPage(Toolbox):
         search_box.send_keys('faketest')
         search_box.send_keys(Keys.ENTER)
         assert self.driver.find_element(By.CSS_SELECTOR, ".top_offset > h2").text == 'Search Results:'
+        self.home()
 
+    def test_home_page_menu(self):
+        self.driver.find_element(By.CSS_SELECTOR, "#homeMenu").click()
+        self.driver.find_element(By.CSS_SELECTOR, "#onlineBankingMenu").click()
+        self.driver.find_element(By.CSS_SELECTOR, "#feedback").click()
 
 

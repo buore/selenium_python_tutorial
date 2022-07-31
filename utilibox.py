@@ -22,3 +22,9 @@ class Toolbox:
         self.driver.find_element(By.CSS_SELECTOR, '#user_password').send_keys(pword)
         self.driver.find_element(By.CSS_SELECTOR, '#user_remember_me').click()
         self.driver.find_element(By.CSS_SELECTOR, 'input[value="Sign in"]').click()
+
+    def home(self):
+        self.driver.back()
+
+    def navigate_to_feedback_page(self):
+        self.driver.find_element(By.CSS_SELECTOR, "#feedback").click()
