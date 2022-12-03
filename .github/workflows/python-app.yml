@@ -48,8 +48,3 @@ jobs:
         name: assets-for-download
         path: downloads
 
-    - name: use the upload artifact  git actions
-      uses: actions/upload-artifact@v2
-      with:
-          name: directory for screenshots
-          path: screenshots
