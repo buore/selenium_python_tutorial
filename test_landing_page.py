@@ -12,7 +12,7 @@ class TestLandingPage(Toolbox):
     def test_landing_page(self):
         self.url()
         landing_page_text = self.driver.find_element(By.CSS_SELECTOR, ".brand").text
-        assert landing_page_text == 'Zero Bank', self.take_scrn_shot()
+        assert landing_page_text == 'Zero Bank1', self.take_scrn_shot()
 
     def test_searchbox(self):
         search_box=self.driver.find_element(By.CSS_SELECTOR, "#searchTerm")
