@@ -34,10 +34,8 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: Step 1 - Create a temporary artifact downloads folder
-      run: |
-            touch reports.html
-            pytest --html=report.html
+    - name: run tests with pytest
+      run: pytest --html=report.html
 
     - name: Step 1 - Create a temporary artifact downloads folder
       run: mkdir downloads
