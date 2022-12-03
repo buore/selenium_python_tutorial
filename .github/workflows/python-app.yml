@@ -34,19 +34,13 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-#    - uses: actions/checkout@v3
-#    - run: mkdir -p screenshots
-#    - run: pytest --html=screenshots/reports.html  >> $GITHUB_ENV
-    - name: run tests
-      id: step_one
-      run: |
-          echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
-          pytest --html=screenshots/reports.html  >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-#    - uses: actions/upload-artifact@v3
-#      with:
-#        name: reports-v1
-#        path: reports.html
+    - uses: actions/checkout@v3
+    - run: mkdir -p screenshots
+    - run: pytest --html=screenshots/reports.html
+    - uses: actions/upload-artifact@v3
+      with:
+        name: reports-v1
+        path: reports.html
 
 
 
