@@ -39,9 +39,7 @@ jobs:
     - name: step 2 - Add artifacts to publish to the temp folder
       run: |
             cd downloads
-            echo 'alpha'    > alpha.html
-            echo 'bravo'    > bravo.html
-            echo 'charlie'  > charlie.html
+            pytest --html=report.html
             cd ..
 
     - name: Step 3 - Use the Upload Artifact GitHub Action
@@ -49,16 +47,6 @@ jobs:
       with:
         name: assets-for-download
         path: downloads
-
-    - name: make a  reports directory
-      run: mkdir screenshots
-
-    - name: Test with pytest
-      run: |
-        cd screenshots
-        echo "test" >  screen1.html
-        pytest --html=screenshots/report.html
-        cd ..
 
     - name: use the upload artifact  git actions
       uses: actions/upload-artifact@v2
