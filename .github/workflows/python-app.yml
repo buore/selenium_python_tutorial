@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: report
-          path:/home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports.html
+          path: /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports.html
 
 
 
