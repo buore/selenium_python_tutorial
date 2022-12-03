@@ -37,8 +37,9 @@ jobs:
     - uses: actions/checkout@v3
     - run: | 
             mkdir -p screenshots
+            chmod 777
             pytest  --html=screenshots/reports.html
-            chmod=777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/screenshots/reports.html
+            chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/screenshots/reports.html
 
     - name: Set output
       id: results
