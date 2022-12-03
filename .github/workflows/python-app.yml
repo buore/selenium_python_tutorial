@@ -38,6 +38,7 @@ jobs:
     - run: | 
             mkdir -p screenshots
             pytest  --html=screenshots/reports.html
+            chmod 777 screenshots
 
     - name: Set output
       id: results
