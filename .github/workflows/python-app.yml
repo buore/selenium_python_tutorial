@@ -39,11 +39,6 @@ jobs:
             mkdir -p screenshots
             pytest  --html=screenshots/reports.html
             echo "artifactPath=screenshots/reports.html" >> $GITHUB_ENV
-    - name: read test results
-      id: step_one
-      run: |
-        echo "${{ env.artifactPath }}"
-
     - uses: actions/upload-artifact@v3
       with:
         name: artifact
