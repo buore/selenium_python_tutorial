@@ -35,11 +35,16 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Step 1 - Create a temporary artifact downloads folder
+      run: |
+            touch reports.html
+            pytest --html=report.html
+
+    - name: Step 1 - Create a temporary artifact downloads folder
       run: mkdir downloads
     - name: step 2 - Add artifacts to publish to the temp folder
       run: |
             cd downloads
-            pytest --html=downloads/report.html
+            echo "creating reports"  > reports.html
             cd ..
 
     - name: Step 3 - Use the Upload Artifact GitHub Action
