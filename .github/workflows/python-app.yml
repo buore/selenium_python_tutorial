@@ -39,7 +39,7 @@ jobs:
             pytest --html=report.html
             mkdir downloads
             cd downloads
-            echo "done" >> done.html
+            echo "done"  > done.html
             cd ..
 
     - name: Step 3 - Use the Upload Artifact GitHub Action
