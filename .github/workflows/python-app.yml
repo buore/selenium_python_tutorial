@@ -38,7 +38,7 @@ jobs:
     - run: | 
             mkdir -p screenshots
             pytest  --html=screenshots/reports.html
-            chmod=777  screenshots/reports.html
+            chmod=777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/screenshots/reports.html
 
     - name: Set output
       id: results
