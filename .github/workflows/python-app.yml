@@ -41,8 +41,9 @@ jobs:
       run: mkdir downloads
     - name: step 2 - Add artifacts to publish to the temp folder
       run: |
+            cp -r html file: file:///home/runner/work/selenium_python_tutorial/selenium_python_tutorial/report.html  ~/downloads
             cd downloads
-            echo "creating reports" >> $GITHUB_OUTPUT
+            echo "creating reports"
             cd ..
 
     - name: Step 3 - Use the Upload Artifact GitHub Action
