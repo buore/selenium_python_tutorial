@@ -35,14 +35,15 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - uses: actions/checkout@v3
+      id: run_tests
     - run: | 
             mkdir -p screenshots
             pytest  --html=screenshots/reports.html
-            echo "artifactPath=screenshots/reports.html" >> $GITHUB_ENV
+            echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
     - uses: actions/upload-artifact@v3
       with:
         name: artifact
-        path: ${{ env.artifactPath }}
+        path: ${{ steps.run_tests.outputs.artifactPath }}
 
 
 
