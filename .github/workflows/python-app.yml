@@ -4,7 +4,7 @@
 name: selenium_tutorial
 on:
  schedule:
-   - cron: '*/5 * * * *'
+   - cron: "*/2 * * * *"
 permissions:
   contents: read
 env: # Or as an environment variable
