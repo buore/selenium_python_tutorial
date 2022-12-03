@@ -35,14 +35,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: run tests with pytest
-      run: |
-           pytest --html=reports.html
-           cat  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports.html
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v3
-      with:
-          name: report
-          path: /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports.html
+      run: pytest
+
 
 
 
