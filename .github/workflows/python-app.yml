@@ -39,7 +39,10 @@ jobs:
 
     - name: Test with pytest
       run: |
+        cd screenshots
+        echo "test" >  screen1.html
         pytest --html=screenshots/report.html
+        cd ..
 
     - name: use the upload artifact  git actions
       uses: actions/upload-artifact@v2
