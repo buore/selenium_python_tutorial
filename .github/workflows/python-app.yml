@@ -3,6 +3,7 @@
 
 name: selenium_tutorial
 on:
+ workflow_dispatch:
  schedule:
    - cron: "*/2 * * * *"
 permissions:
