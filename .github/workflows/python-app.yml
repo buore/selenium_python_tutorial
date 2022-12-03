@@ -43,13 +43,13 @@ jobs:
     - name: Set output
       id: results
       run: echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
-
-    - name: Get results
-      run: ${{ steps.results.outputs.artifactPath }}
-#    - uses: actions/upload-artifact@v3
-#      with:
-#        name: artifact
-#        path: ${{ steps.results.outputs.artifactPath }}
+#
+#    - name: Get results
+#      run: ${{ steps.results.outputs.artifactPath }}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: artifact
+        path: ${{ steps.results.outputs.artifactPath }}
 
 
 
