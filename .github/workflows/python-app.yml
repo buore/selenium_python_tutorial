@@ -37,19 +37,19 @@ jobs:
     - uses: actions/checkout@v3
       if: success() || failure()
     - run: | 
-            mkdir -p screenshots
-            pytest  --html=screenshots/reports.html
-            chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/screenshots/reports.html
+            mkdir -p reports
+            pytest  --alluredir=reports
+            chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports
 
     - name: Set output
       if: success() || failure()
       id: results
-      run: echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
+      run: echo "artifactPath=reports" >> $GITHUB_OUTPUT
 
     - uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
-        name: artifact
+        name: test-results
         path: ${{ steps.results.outputs.artifactPath }}
 
 
