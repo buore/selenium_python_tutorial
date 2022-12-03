@@ -38,15 +38,11 @@ jobs:
     - run: | 
             mkdir -p screenshots
             pytest  --html=screenshots/reports.html
-            echo "artifactPath=screenshots/reports.html" >> $GITHUB_ENV
+            echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
     - uses: actions/upload-artifact@v3
       with:
         name: artifact
         path: ${{ env.artifactPath }}
-#    - uses: actions/upload-artifact@v3
-#      with:
-#        name: reports-v1
-#        path: screenshots/reports.html
 
 
 
