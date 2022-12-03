@@ -40,12 +40,12 @@ jobs:
             pytest  --html=screenshots/reports.html
 
     - name: Set output
-      id: run_tests
+      id: results
       run: echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
     - uses: actions/upload-artifact@v3
       with:
         name: artifact
-        path: ${{ env.artifactPath }}
+        path: ${{ steps.results.outputs.artifactPath }}
 
 
 
