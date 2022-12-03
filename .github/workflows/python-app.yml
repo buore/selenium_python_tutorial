@@ -42,12 +42,10 @@ jobs:
             chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/screenshots/reports.html
 
     - name: Set output
-      if: success() || failure()
       id: results
       run: echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
 
     - uses: actions/upload-artifact@v3
-      if: success() || failure()
       with:
         name: artifact
         path: ${{ steps.results.outputs.artifactPath }}
