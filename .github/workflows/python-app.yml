@@ -39,7 +39,7 @@ jobs:
       - run: pytest --html=screenshots/reports.html
       - uses: actions/upload-artifact@v3
         with:
-          name: reports
+          name: reports-v1
           path: screenshots/reports.html
 
 
