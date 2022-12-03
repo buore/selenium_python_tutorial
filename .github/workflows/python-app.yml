@@ -35,19 +35,19 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - uses: actions/checkout@v3
-      continue-on-error: true
+      if: success() || failure()
     - run: | 
             mkdir -p screenshots
             pytest  --html=screenshots/reports.html
             chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/screenshots/reports.html
 
     - name: Set output
-      continue-on-error: true
+      if: success() || failure()
       id: results
       run: echo "artifactPath=screenshots/reports.html" >> $GITHUB_OUTPUT
 
     - uses: actions/upload-artifact@v3
-      continue-on-error: true
+      if: success() || failure()
       with:
         name: artifact
         path: ${{ steps.results.outputs.artifactPath }}
