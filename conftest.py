@@ -8,7 +8,7 @@ import pytest
 @pytest.fixture(autouse=True, scope='class')
 def setup(request):
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     request.cls.driver = driver
     yield
