@@ -35,16 +35,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: run tests with pytest
-      run: |
-            pytest --html=report.html
+      run: pytest
 
-    - name: Set the value
-      id: step_one
-      run: |
-        echo "action_state=yellow" >> $GITHUB_ENV
-    - name: Use the stored value
-      id: step_two
-      run: |
-        echo "${{ env.action_state }}"
 
 
