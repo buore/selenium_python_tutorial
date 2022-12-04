@@ -38,18 +38,18 @@ jobs:
       if: success() || failure()
     - run: | 
             mkdir -p reports
-            pytest  --alluredir=reports
-            chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports
+            pytest  --html=reports/reports.html
+            chmod 777  /home/runner/work/selenium_python_tutorial/selenium_python_tutorial/reports/reports.html
 
     - name: Set output
       if: success() || failure()
       id: results
-      run: echo "artifactPath=reports" >> $GITHUB_OUTPUT
+      run: echo "artifactPath=reports/reports.html" >> $GITHUB_OUTPUT
 
     - uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
-        name: test-results
+        name: test-report
         path: ${{ steps.results.outputs.artifactPath }}
 
 

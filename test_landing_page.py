@@ -2,7 +2,7 @@ import datetime
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 import time
-from .utilibox import Toolbox
+from utilibox import Toolbox
 
 
 class TestLandingPage(Toolbox):
